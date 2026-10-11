@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "io.github.qso-graph/qso-graph-contest-mcp",
+  "description": "Contest calendar and rules MCP server: what is running, what is coming, and the rules",
+  "repository": {
+    "url": "https://github.com/qso-graph/qso-graph-contest-mcp",
+    "source": "github"
+  },
+  "version": "0.0.1",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "qso-graph-contest-mcp",
+      "version": "0.0.1",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "tool": "manual",
+      "version": "2.0.0"
+    }
+  }
+}
