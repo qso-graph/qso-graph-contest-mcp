@@ -19,7 +19,10 @@ from fastmcp import FastMCP
 from . import __version__
 
 PLANNED = (
-    "Which contests are running now, what is coming, and the rules, exchange and multipliers for each — with every contest citing the sponsor that published its rules. Named for this project rather than any sponsor: a server covering many sponsors' contests cannot take one sponsor's name."
+    "Which contests are running now, what is coming, and the rules, exchange and "
+    "multipliers for each — with every contest citing the sponsor that published its "
+    "rules. Named for this project rather than any sponsor: a server covering many "
+    "sponsors' contests cannot take one sponsor's name."
 )
 TRACKING = "https://github.com/qso-graph/qso-graph-devel/issues/49"
 
@@ -28,13 +31,36 @@ mcp = FastMCP(
     version=__version__,
     instructions=(
         "IN DEVELOPMENT — this server has no working tools yet, and calling it will "
-        "not answer questions about " + 'Amateur radio contest calendar and rules MCP server'.lower() + ". "
+        "not answer questions about "
+        + "Amateur radio contest calendar and rules MCP server".lower() + ". "
         "Planned: " + PLANNED + " Progress: " + TRACKING
     ),
 )
 
 
-@mcp.tool()
+# MCP 2026-07-28 tool annotations. The defaults are pessimistic — a tool that
+# declares nothing is advertised as destructive, non-idempotent and open-world,
+# and the specification tells a client it may keep a human in the loop for that.
+#
+# All four are right today because this package answers from constants compiled
+# into the wheel. tests/test_mcp_conformance.py asserts that reason rather than
+# the values, so the build-out trips the test instead of the hints quietly
+# becoming wrong.
+#
+# `openWorldHint` is the one that will need deciding. Contest rules are
+# published by many sponsors on their own pages, on their own schedules, and
+# nothing enumerates them — the specification's own closed-domain example is a
+# database query, which this will not be. Expect `true` for anything that reads
+# a sponsor's calendar, and `certifi` with it (qso-graph-devel#73).
+_ANSWERS_FROM_THE_PACKAGE = {
+    "readOnlyHint": True,
+    "destructiveHint": False,
+    "idempotentHint": True,
+    "openWorldHint": False,
+}
+
+
+@mcp.tool(annotations=_ANSWERS_FROM_THE_PACKAGE)
 def get_version_info() -> dict[str, Any]:
     """Get this server's version and development status.
 
