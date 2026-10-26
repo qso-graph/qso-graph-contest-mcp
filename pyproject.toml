@@ -1,6 +1,6 @@
 [project]
 name = "qso-graph-contest-mcp"
-version = "0.0.5"
+version = "0.1.0"
 description = "Amateur radio contest calendar and rules MCP server — in development"
 readme = "README.md"
 license = {text = "GPL-3.0-or-later"}
