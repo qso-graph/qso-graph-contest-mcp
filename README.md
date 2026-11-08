@@ -7,14 +7,14 @@
 >
 > This package is published so the name is held while the work is planned in the open.
 > It registers one tool, `get_version_info`, and **does nothing else yet**. If you install
-> it expecting a working server, that is what you will find — which is why it says so
+> it expecting a working server, that is what you will find—which is why it says so
 > here, in the server's own instructions, and in the one tool it has.
 >
 > PyPI does not reserve a name for a pending trusted publisher, so a name is only held
 > once something is actually published. Given that, a package that says what it is beats
 > an empty one that does not.
 
-Which contests are running now, what is coming, and the rules, exchange and multipliers for each — with every contest citing the sponsor that published its rules. Named for this project rather than any sponsor: a server covering many sponsors' contests cannot take one sponsor's name.
+Which contests are running now, what is coming, and the rules, exchange and multipliers for each—with every contest citing the sponsor that published its rules. Named for this project rather than any sponsor: a server covering many sponsors' contests cannot take one sponsor's name.
 
 Planned work, including the data sources it would use and whether each is actually
 available, is tracked in
@@ -36,7 +36,7 @@ uvx qso-graph-contest-mcp            # run it; nothing to install
 
 ## Quick Start
 
-No credentials needed — install and configure your MCP client.
+No credentials needed—install and configure your MCP client.
 
 ### Configure your MCP client
 
@@ -90,7 +90,7 @@ Configure via Settings > Apps & Connectors, or in your agent definition:
 
 ### Questions it will answer
 
-Not yet — these are what the finished server is for:
+Not yet—these are what the finished server is for:
 
 > "What contests are running this weekend?"
 
